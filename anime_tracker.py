@@ -42,15 +42,14 @@ def get_valid_status():
                  print("Invalid status. Try again.")
                  continue
 
-def get_valid_count(status):
-
-    total_episodes = int(input("Total episodes: "))
+def get_valid_count(status, total_episodes):
 
 
-
-    
     if status == "Plan To Watch":
          return 0 
+
+    if status == "Completed":
+         return total_episodes
 
 
     else:
@@ -82,8 +81,10 @@ while True:
     rating = get_valid_rating()
     # Ask the user for status
     status = get_valid_status()
+    # Ask for total episodes
+    total_episodes = int(input("Total episodes: "))
     # Ask the user for episode count
-    episode_count = get_valid_count(status)
+    episode_count = get_valid_count(status, total_episodes)
 
          
     # Add into one dictionary 
